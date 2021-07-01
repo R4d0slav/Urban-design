@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Righteous&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        body {
+            background-image: url("slike/pozadinafefe.jpg");
+            background-repeat: repeat;
+            animation: textShine 100s linear infinite;
+            background-position: 0px 0px;
+        }
+
+        @keyframes textShine {
+                0% { background-position: 0 0; }
+                100% { background-position: -3000px 0; }
+        
+        }
+
+        #homeTitle {
+            width: 99%;
+            grid-area: homeTitle;
+            position: absolute;
+            text-align: center;
+            top: 30%;
+        }
+
+        img {
+            width: 70%;
+        }
+
+        h1{
+            display: none;
+            font-size: 4vmin;
+            animation: blinker 2s linear infinite;
+        }
+
+        @keyframes blinker {
+            30% {
+                opacity: 0;
+            }
+            60% {
+                opacity: 1;
+            }
+        }
+
+        button {
+            display: inline;
+            margin-bottom: 10px;
+            min-width: 15%;
+            padding: 0.7%;
+            font-family: 'Press Start 2P', cursive;
+            background-color: black;
+            font-size: 1.7vmin;
+            color: white;
+            border-style: double;
+            border-radius: 20px;
+            border-width: 5px;
+        }
+
+        button:hover {
+            background: rgb(96,91,33);
+            background: linear-gradient(90deg, rgba(96,91,33,1) 4%, rgba(255,253,34,1) 18%, rgba(208,203,50,1) 59%, rgba(190,168,37,1) 84%, rgba(74,75,3,1) 98%);
+        }
+
+        @media (min-width: 1200px) {
+            img {
+                width: 45%;
+            }
+            button {
+                display: none;
+            }
+            h1 {
+                display: block;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div id="homeTitle">
+        <img src="slike/viber_image_2021-04-25_20-38-11.png" alt="image" />
+
+        <h1>PRESS ENTER</h1>
+
+        <form method="get" action="play.html">
+            <button type="submit">PLAY</button><br />
+        </form>
+
+        <form method="get" action="instructions.html">
+            <button type="submit">INSTRUCTIONS</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("keypress", function(e) {
+            if (e.code == "Enter") {
+                document.location.href = "play.html";
+            }
+        });
+
+        localStorage.setItem("url", "index.html");
+    </script>
+
+
+</body>
+</html>

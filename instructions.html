@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Righteous&display=swap" rel="stylesheet">
+
+    <style>
+
+        #instrTitle {
+            font-size: 3.2vmin;
+            color: gold;
+        }
+
+        #instr {
+            position: relative;
+            grid-area: left-side;
+            /* width: 600px; */
+            /* padding: 20px; */
+            margin: 10% 0 0 0;
+        }
+
+        li {
+            color: white;
+            font-size: 1.5vmin;
+            /* width: 100%; */
+            /* background-color: turquoise; */
+        }
+
+        ul > li {
+            margin: 1.5% 0 0 0;
+
+        }
+
+        ul ul {
+            position: relative;
+            display: inline;
+            left: 5%
+        }
+
+        ul > li > ul > li {
+            font-size: 1.2vmin;
+            color: silver;
+        }
+
+        #right-instr {
+            grid-area: right-side;
+            margin: 15% 0px 0px 0px;
+            text-align: right;
+            padding: 20px;
+        }
+
+        #right-instr h1 {
+            color: white;
+            font-size: 1.5vmin;
+        }
+
+        #right-instr h2 {
+            color: silver;
+            font-size: 1.2vmin;
+        }
+
+        img {
+            padding: 12% 0 0 3%;
+            width: 8%;
+        }
+
+        footer {
+            margin-top: 15%;
+            font-size: 2vmin;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: 54% 45%;
+            grid-template-areas: 
+            "header header"
+            "left-side right-side"
+            "footer footer"
+            ;
+        }
+
+        .popup {
+            position: relative;
+            display: inline;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+
+            .popup .popuptext {
+            visibility: hidden;
+            width: 700%;
+            height:fit-content;
+            font-size: 1.1vmin;
+            background-color: rgb(53, 53, 53);
+            color: silver;
+            text-align: center;
+            border-radius: 5%;
+            border-color: black;
+            border-width: 5px;
+            border-style: double;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            margin-left: -160px;
+            padding: 20% 15% 15% 15%;
+            text-align: justify;
+            line-height: 1.6vmin;
+
+            }
+
+            /* Popup arrow */
+            .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            top: 5vw;
+            left: 101%;
+            transform: rotate(270deg);
+            /* margin-left: -5px; */
+            border-width: 1vmin;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+            }
+
+            /* Toggle this class - hide and show the popup */
+            .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+            }
+
+            /* Add animation (fade in the popup) */
+            @-webkit-keyframes fadeIn {
+            from {opacity: 0;} 
+            to {opacity: 1;}
+            }
+
+            @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity:1 ;}
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a class="link" href="javascript:previous();">Back</a>
+        <h1 id="instrTitle">Instructions</h1>
+    </header>
+
+    <div id="instr">
+        <ul>
+            <li>Move
+                <ul>
+                    <li>Left click with mouse -> Move object</li>
+                    <li>Left click again -> Place object</li>
+                    <li>Space -> Place object</li>
+                </ul>
+            </li>
+            <li>Rotation
+                <ul>
+                    <li>Left arrow key -> Rotate left by 45 deg</li>
+                    <li>Right arrow key -> Rotate right by 45 deg</li>
+                </ul>
+            </li>
+            <li>Size
+                <ul>
+                    <li>Up arrow key -> Increase size</li>
+                    <li>Down arrow key -> Decrease size</li>
+                </ul>
+            </li>
+            <li>Delete
+                <ul>
+                    <li>Backspace -> Delete object</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div id="right-instr">
+        <h1>GAME DESIGNED BY</h1>
+        <h2>RADOSLAV ATANASOSKI</h2>
+        
+        <div class="popup" onclick="myFunction()">
+            <p class="popuptext" id="myPopup">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Commodo ullamcorper a lacus vestibulum. 
+                Nisi vitae suscipit tellus mauris a. 
+                Pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices. 
+                Sodales ut eu sem integer vitae. 
+                Pretium nibh ipsum consequat nisl vel pretium lectus quam id. 
+                Et netus et malesuada fames ac turpis egestas. 
+                Quis ipsum suspendisse ultrices gravida dictum fusce ut. 
+                Massa vitae tortor condimentum lacinia quis vel. Et tortor at risus viverra adipiscing. 
+                Vivamus at augue eget arcu dictum varius. 
+                Metus vulputate eu scelerisque felis imperdiet proin fermentum. 
+                Vel eros donec ac odio tempor orci dapibus ultrices in. 
+                Massa tincidunt dui ut ornare lectus sit amet. 
+                Aliquet porttitor lacus luctus accumsan tortor posuere ac ut. 
+                Eget velit aliquet sagittis id. Sem et tortor consequat id porta. 
+                Dolor magna eget est lorem. 
+                Iaculis at erat pellentesque adipiscing commodo elit at.<br />
+                Sit amet purus gravida quis blandit turpis cursus in. 
+                Fusce id velit ut tortor pretium. 
+                Mauris cursus mattis molestie a iaculis. 
+                Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. 
+                Nam libero justo laoreet sit amet. 
+                Dignissim cras tincidunt lobortis feugiat vivamus at augue. 
+                Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. 
+                Adipiscing diam donec adipiscing tristique. 
+                Senectus et netus et malesuada. 
+                Lectus magna fringilla urna porttitor rhoncus. 
+                Ornare arcu odio ut sem nulla pharetra.</p>
+         
+            <img src="slike/question.jpg" alt="image" />
+        </div>
+        <img src="slike/exclamation.jpg" alt="image" />
+    </div>
+
+    <footer>Urbanistično projektiranje</footer>
+
+    <script>
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+        function previous() {
+            let url = localStorage.getItem("url");
+            if (url)
+                document.location.href = url;
+            else
+                document.location.href = "home.html";
+            }
+    </script>
+
+</body>
+</html>
